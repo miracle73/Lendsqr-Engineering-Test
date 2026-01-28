@@ -1,46 +1,111 @@
-# Getting Started with Create React App
+# Lendsqr Users Page - Setup Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Quick Start
 
-## Available Scripts
+1. **Copy the files to your React project:**
+   - `Users.tsx` → `src/pages/Users/Users.tsx`
+   - `Users.scss` → `src/pages/Users/Users.scss`
+   - `App.tsx` → `src/App.tsx` (or integrate into your existing App)
+   - `App.scss` → `src/App.scss`
 
-In the project directory, you can run:
+2. **Make sure SCSS is installed:**
+   ```bash
+   npm install sass
+   ```
 
-### `npm start`
+3. **Install React Router (if not already installed):**
+   ```bash
+   npm install react-router-dom
+   npm install @types/react-router-dom --save-dev
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. **Run your app:**
+   ```bash
+   npm start
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features Implemented
 
-### `npm test`
+✅ **Stats Cards** - 4 cards showing user statistics  
+✅ **Users Table** - Displaying user data with proper columns  
+✅ **Filter Functionality** - Click filter icon to open filter popup  
+✅ **Pagination** - Navigate through 500 mock users  
+✅ **Action Menu** - Three-dot menu for each user row  
+✅ **Status Badges** - Color-coded status (Active, Inactive, Pending, Blacklisted)  
+✅ **Mobile Responsive** - Works on all screen sizes  
+✅ **Mock Data** - 500 users generated automatically  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## File Structure
 
-### `npm run build`
+```
+src/
+├── pages/
+│   └── Users/
+│       ├── Users.tsx      # Main component
+│       └── Users.scss     # Styles
+├── App.tsx                # App wrapper
+└── App.scss               # Global styles
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Key Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Filter System
+- Click any filter icon in table header
+- Filter by: Organization, Username, Email, Phone, Status
+- Reset or Apply filters
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Pagination
+- Show 10/20/50/100 items per page
+- Navigate with prev/next buttons
+- Page numbers displayed
 
-### `npm run eject`
+### 3. Action Menu
+- Click three-dot icon on any row
+- Options: View Details, Blacklist User, Activate User
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 4. Responsive Design
+- Desktop: Full table layout
+- Tablet: Adjusted spacing
+- Mobile: Horizontal scroll for table, stacked stats cards
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Change Colors
+Edit the SCSS variables in `Users.scss`:
+```scss
+// Status colors
+.status-active { color: #39cd62; }
+.status-inactive { color: #545f7d; }
+.status-pending { color: #e9b200; }
+.status-blacklisted { color: #e4033b; }
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Add Real API
+Replace the mock data generation in `useEffect`:
+```typescript
+useEffect(() => {
+  // Replace this with your API call
+  fetch('your-api-endpoint')
+    .then(res => res.json())
+    .then(data => {
+      setUsers(data);
+      setFilteredUsers(data);
+    });
+}, []);
+```
 
-## Learn More
+## Notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Uses Work Sans font (loaded from Google Fonts)
+- All data is mock-generated (500 users)
+- Filter popup appears on first filter icon click
+- Mobile responsive with horizontal scroll on small screens
+- Status badges are color-coded per design requirements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Next Steps
+
+1. Connect to real API endpoint
+2. Add routing to User Details page
+3. Implement actual user actions (blacklist, activate)
+4. Add localStorage for filter preferences
+5. Add unit tests

@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Avenir:wght@400;700&display=swap');
+
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+  }
+}
+
+.login-left {
+  flex: 1;
+  background: #ffffff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 968px) {
+    padding: 30px 20px;
+    align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 16px;
+  }
+
+  .logo {
+    margin-bottom: 80px;
+
+    @media (max-width: 968px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 30px;
+    }
+
+    img {
+      height: 36px;
+      width: auto;
+
+      @media (max-width: 480px) {
+        height: 28px;
+      }
+    }
+  }
+
+  .illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 400px;
+
+      @media (max-width: 968px) {
+        max-height: 250px;
+      }
+
+      @media (max-width: 480px) {
+        max-height: 180px;
+      }
+    }
+  }
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+
+  @media (max-width: 968px) {
+    padding: 40px 20px 60px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 16px 50px;
+  }
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 447px;
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-family: 'Avenir', 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 55px;
+    color: #213f7d;
+    margin-bottom: 10px;
+
+    @media (max-width: 480px) {
+      font-size: 32px;
+      line-height: 44px;
+    }
+  }
+
+  .subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #545f7d;
+    margin-bottom: 60px;
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .error-message {
+    color: #e4033b;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(228, 3, 59, 0.1);
+    border-radius: 4px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group {
+    margin-bottom: 24px;
+    position: relative;
+
+    @media (max-width: 480px) {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 18px 16px;
+      border: 2px solid rgba(84, 95, 125, 0.15);
+      border-radius: 5px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #545f7d;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: #545f7d;
+        opacity: 0.6;
+      }
+
+      &:focus {
+        border-color: #39cdcc;
+      }
+
+      @media (max-width: 480px) {
+        padding: 16px 14px;
+      }
+    }
+
+    &.password-group {
+      input {
+        padding-right: 70px;
+      }
+    }
+
+    .show-btn {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.1em;
+      color: #39cdcc;
+      cursor: pointer;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+ .forgot-password {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.1em;
+  color: #39cdcc;
+  text-decoration: none;
+  margin-bottom: 30px;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+  }
+}
+  .login-btn {
+    width: 100%;
+    padding: 18px;
+    background: #39cdcc;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #2eb3b2;
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+
+    @media (max-width: 480px) {
+      padding: 16px;
+    }
+  }
+}

@@ -69,14 +69,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="sidebar-content">
                     {/* Switch Organization */}
                     <div className="org-switcher" onClick={closeSidebar}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M5.73333 1.33334H1.33333V5.73334H5.73333V1.33334Z" stroke="#213F7D" strokeWidth="1.5" />
-                            <path d="M14.6667 1.33334H10.2667V5.73334H14.6667V1.33334Z" stroke="#213F7D" strokeWidth="1.5" />
-                            <path d="M14.6667 10.2667H10.2667V14.6667H14.6667V10.2667Z" stroke="#213F7D" strokeWidth="1.5" />
-                            <path d="M5.73333 10.2667H1.33333V14.6667H5.73333V10.2667Z" stroke="#213F7D" strokeWidth="1.5" />
-                        </svg>
+                     <SwitchOrganizations />
                         <span>Switch Organization</span>
-                       <SwitchOrganizations />
+                     
                     </div>
 
                     {/* Dashboard */}

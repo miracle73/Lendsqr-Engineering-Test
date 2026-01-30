@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Users.scss';
 import UserDetail from './UserDetail';
+import { FirstIcon, SecondIcon, ThirdIcon, FourthIcon } from '../../assets/svg';
 
 interface User {
   id: string;
@@ -159,10 +160,7 @@ const Users: React.FC = () => {
       <div className="stats-container">
         <div className="stat-card">
           <div className="stat-icon users-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect width="40" height="40" rx="20" fill="#DF18FF" fillOpacity="0.1"/>
-              <path d="M20 11C17.24 11 15 13.24 15 16C15 18.76 17.24 21 20 21C22.76 21 25 18.76 25 16C25 13.24 22.76 11 20 11ZM20 23C16.67 23 10 24.67 10 28V30H30V28C30 24.67 23.33 23 20 23Z" fill="#DF18FF"/>
-            </svg>
+            <FirstIcon />
           </div>
           <p className="stat-label">USERS</p>
           <p className="stat-value">2,453</p>
@@ -170,10 +168,7 @@ const Users: React.FC = () => {
 
         <div className="stat-card">
           <div className="stat-icon active-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect width="40" height="40" rx="20" fill="#5718FF" fillOpacity="0.1"/>
-              <path d="M20 11C17.24 11 15 13.24 15 16C15 18.76 17.24 21 20 21C22.76 21 25 18.76 25 16C25 13.24 22.76 11 20 11ZM20 23C16.67 23 10 24.67 10 28V30H30V28C30 24.67 23.33 23 20 23Z" fill="#5718FF"/>
-            </svg>
+            <SecondIcon />
           </div>
           <p className="stat-label">ACTIVE USERS</p>
           <p className="stat-value">2,453</p>
@@ -181,21 +176,15 @@ const Users: React.FC = () => {
 
         <div className="stat-card">
           <div className="stat-icon loans-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect width="40" height="40" rx="20" fill="#F55F44" fillOpacity="0.1"/>
-              <path d="M20 11C17.24 11 15 13.24 15 16C15 18.76 17.24 21 20 21C22.76 21 25 18.76 25 16C25 13.24 22.76 11 20 11ZM20 23C16.67 23 10 24.67 10 28V30H30V28C30 24.67 23.33 23 20 23Z" fill="#F55F44"/>
-            </svg>
+          <ThirdIcon />
           </div>
           <p className="stat-label">USERS WITH LOANS</p>
           <p className="stat-value">12,453</p>
         </div>
 
         <div className="stat-card">
-          <div className="stat-icon savings-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect width="40" height="40" rx="20" fill="#FF3366" fillOpacity="0.1"/>
-              <path d="M20 11C17.24 11 15 13.24 15 16C15 18.76 17.24 21 20 21C22.76 21 25 18.76 25 16C25 13.24 22.76 11 20 11ZM20 23C16.67 23 10 24.67 10 28V30H30V28C30 24.67 23.33 23 20 23Z" fill="#FF3366"/>
-            </svg>
+          <div className="stat-icon savings-icon bg-[#FF3366] ">
+           <FourthIcon />
           </div>
           <p className="stat-label">USERS WITH SAVINGS</p>
           <p className="stat-value">102,453</p>
